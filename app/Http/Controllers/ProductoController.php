@@ -15,7 +15,7 @@ class ProductoController extends Controller
      */
     public function index()
     {
-        //
+        return Producto::orderBy('cod')->get();
     }
 
     /**
@@ -36,7 +36,7 @@ class ProductoController extends Controller
      */
     public function store(StoreProductoRequest $request)
     {
-        //
+        return Producto::create($request->all());
     }
 
     /**
@@ -47,7 +47,7 @@ class ProductoController extends Controller
      */
     public function show(Producto $producto)
     {
-        //
+        return $producto;
     }
 
     /**
@@ -70,7 +70,8 @@ class ProductoController extends Controller
      */
     public function update(UpdateProductoRequest $request, Producto $producto)
     {
-        //
+        $producto->update($request->all());
+        return $producto;
     }
 
     /**
@@ -81,6 +82,7 @@ class ProductoController extends Controller
      */
     public function destroy(Producto $producto)
     {
-        //
+        $producto->delete();
+        return 'Eliminado exitosamente';
     }
 }

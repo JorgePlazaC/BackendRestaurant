@@ -15,7 +15,7 @@ class FacturaController extends Controller
      */
     public function index()
     {
-        //
+        return Factura::orderBy('id')->get();
     }
 
     /**
@@ -36,7 +36,7 @@ class FacturaController extends Controller
      */
     public function store(StoreFacturaRequest $request)
     {
-        //
+        return Factura::create($request->all());
     }
 
     /**
@@ -47,7 +47,7 @@ class FacturaController extends Controller
      */
     public function show(Factura $factura)
     {
-        //
+        return $factura;
     }
 
     /**
@@ -70,7 +70,8 @@ class FacturaController extends Controller
      */
     public function update(UpdateFacturaRequest $request, Factura $factura)
     {
-        //
+        $factura->update($request->all());
+        return $factura;
     }
 
     /**
@@ -81,6 +82,7 @@ class FacturaController extends Controller
      */
     public function destroy(Factura $factura)
     {
-        //
+        $factura->delete();
+        return 'Eliminado exitosamente';
     }
 }

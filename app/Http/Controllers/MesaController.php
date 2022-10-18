@@ -15,7 +15,7 @@ class MesaController extends Controller
      */
     public function index()
     {
-        //
+        return Mesa::orderBy('id')->get();
     }
 
     /**
@@ -36,7 +36,7 @@ class MesaController extends Controller
      */
     public function store(StoreMesaRequest $request)
     {
-        //
+        return Mesa::create($request->all());
     }
 
     /**
@@ -47,7 +47,7 @@ class MesaController extends Controller
      */
     public function show(Mesa $mesa)
     {
-        //
+        return $mesa;
     }
 
     /**
@@ -70,7 +70,8 @@ class MesaController extends Controller
      */
     public function update(UpdateMesaRequest $request, Mesa $mesa)
     {
-        //
+        $mesa->update($request->all());
+        return $mesa;
     }
 
     /**
@@ -81,6 +82,7 @@ class MesaController extends Controller
      */
     public function destroy(Mesa $mesa)
     {
-        //
+        $mesa->delete();
+        return 'Eliminado exitosamente';
     }
 }

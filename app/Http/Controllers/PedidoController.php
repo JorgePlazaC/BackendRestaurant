@@ -15,7 +15,7 @@ class PedidoController extends Controller
      */
     public function index()
     {
-        //
+        return Pedido::orderBy('idFactura')->get();
     }
 
     /**
@@ -36,7 +36,7 @@ class PedidoController extends Controller
      */
     public function store(StorePedidoRequest $request)
     {
-        //
+        return Pedido::create($request->all());
     }
 
     /**
@@ -47,7 +47,7 @@ class PedidoController extends Controller
      */
     public function show(Pedido $pedido)
     {
-        //
+        return $pedido;
     }
 
     /**
@@ -70,7 +70,8 @@ class PedidoController extends Controller
      */
     public function update(UpdatePedidoRequest $request, Pedido $pedido)
     {
-        //
+        $pedido->update($request->all());
+        return $pedido;
     }
 
     /**
@@ -81,6 +82,7 @@ class PedidoController extends Controller
      */
     public function destroy(Pedido $pedido)
     {
-        //
+        $pedido->delete();
+        return 'Eliminado exitosamente';
     }
 }
