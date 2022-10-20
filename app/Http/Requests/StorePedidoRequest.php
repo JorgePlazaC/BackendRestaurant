@@ -24,7 +24,10 @@ class StorePedidoRequest extends FormRequest
     public function rules()
     {
         return [
-            //
+            'idMesa' => 'required',
+            'idFactura' => 'required',
+            'idProducto' => 'required',
+            'cantidad' => 'required'
         ];
     }
 }

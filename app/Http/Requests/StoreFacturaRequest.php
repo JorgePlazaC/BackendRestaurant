@@ -24,7 +24,7 @@ class StoreFacturaRequest extends FormRequest
     public function rules()
     {
         return [
-            //
+            'valorTotal' => 'required'
         ];
     }
 }
