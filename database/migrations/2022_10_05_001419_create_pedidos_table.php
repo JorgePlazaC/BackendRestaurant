@@ -18,8 +18,8 @@ return new class extends Migration
             $table->foreign('idMesa')->references('id')->on('mesas');
             $table->unsignedBigInteger('idFactura');
             $table->foreign('idFactura')->references('id')->on('facturas');
-            $table->unsignedBigInteger('codProducto');
-            $table->foreign('codProducto')->references('cod')->on('productos');
+            $table->unsignedBigInteger('idProducto');
+            $table->foreign('idProducto')->references('id')->on('productos');
             $table->Integer('cantidad');
             $table->timestamps();
         });

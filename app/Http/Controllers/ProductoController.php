@@ -15,7 +15,7 @@ class ProductoController extends Controller
      */
     public function index()
     {
-        return Producto::orderBy('cod')->get();
+        return Producto::orderBy('id')->get();
     }
 
     /**
