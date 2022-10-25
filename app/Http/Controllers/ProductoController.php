@@ -18,6 +18,13 @@ class ProductoController extends Controller
         return Producto::orderBy('id')->get();
     }
 
+    public function cartastica(){
+
+        return view('carta');
+    }
+
+
+
     /**
      * Show the form for creating a new resource.
      *

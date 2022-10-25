@@ -18,6 +18,11 @@ class PedidoController extends Controller
         return Pedido::orderBy('idFactura')->get();
     }
 
+    public function orden(){
+
+        return view('pedido');
+    }
+
     /**
      * Show the form for creating a new resource.
      *

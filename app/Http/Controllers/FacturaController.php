@@ -18,6 +18,11 @@ class FacturaController extends Controller
         return Factura::orderBy('id')->get();
     }
 
+    public function boleta(){
+
+        return view('factura');
+    }
+
     /**
      * Show the form for creating a new resource.
      *

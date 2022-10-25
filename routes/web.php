@@ -1,6 +1,8 @@
 <?php
 
+
 use Illuminate\Support\Facades\Route;
+use app\Http\Controllers\ProductoController;
 
 /*
 |--------------------------------------------------------------------------
@@ -14,5 +16,10 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', function () {
-    return view('welcome');
+    return view('inicio');
 });
+
+Route::get('/tocarta', [App\Http\Controllers\ProductoController::class, 'cartastica'])->name('tocarta');
+Route::get('/topedido', [App\Http\Controllers\PedidoController::class, 'orden'])->name('topedido');
+Route::get('/tofactura', [App\Http\Controllers\FacturaController::class, 'boleta'])->name('tofactura');
+
