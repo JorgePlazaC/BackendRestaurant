@@ -6,6 +6,7 @@ use App\Http\Controllers\FacturaController;
 use App\Http\Controllers\MesaController;
 use App\Http\Controllers\PedidoController;
 use App\Http\Controllers\ProductoController;
+use App\Http\Controllers\CategoriaController;
 
 /*
 |--------------------------------------------------------------------------
@@ -28,3 +29,4 @@ Route::resource('facturas',FacturaController::class);
 Route::resource('mesas',MesaController::class);
 Route::resource('pedidos',PedidoController::class);
 Route::resource('productos',ProductoController::class);
+Route::resource('categorias',CategoriaController::class);

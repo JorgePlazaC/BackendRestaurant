@@ -13,9 +13,9 @@ return new class extends Migration
      */
     public function up()
     {
-        Schema::create('mesas', function (Blueprint $table) {
-            $table->id('id');
-            $table->string('numMesa')->unique();
+        Schema::create('categorias', function (Blueprint $table) {
+            $table->id();
+            $table->string('nombre')->unique();
             $table->timestamps();
         });
     }
@@ -27,6 +27,6 @@ return new class extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('mesas');
+        Schema::dropIfExists('categorias');
     }
 };
