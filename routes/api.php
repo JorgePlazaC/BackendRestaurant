@@ -25,8 +25,13 @@ Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
 });
 */
 
+//Rutas generales
 Route::resource('facturas',FacturaController::class);
 Route::resource('mesas',MesaController::class);
 Route::resource('pedidos',PedidoController::class);
 Route::resource('productos',ProductoController::class);
 Route::resource('categorias',CategoriaController::class);
+
+
+//Rutas personalizadas
+Route::get('/buscarPorCategoria', [ProductoController::class, 'BuscarPorIdCategoria'])->name('BuscarPorIdCategoria');

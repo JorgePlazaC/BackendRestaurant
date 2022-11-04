@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Producto;
+use Illuminate\Http\Request;
 use App\Http\Requests\StoreProductoRequest;
 use App\Http\Requests\UpdateProductoRequest;
 
@@ -92,4 +93,18 @@ class ProductoController extends Controller
         $producto->delete();
         return 'Eliminado exitosamente';
     }
+
+
+    public function BuscarPorIdCategoria(Request $request)
+    {
+        $idCategoria = $request->idCategoria;
+
+        if ($idCategoria == null) {
+            return 'Categoria no ingresada';
+        } else {
+            $Productos = Producto::where('idCategoria', $idCategoria)->get();
+            return $Productos;
+        }
+    }
+
 }
