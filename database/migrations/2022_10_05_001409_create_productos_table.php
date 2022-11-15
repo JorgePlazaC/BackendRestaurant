@@ -22,6 +22,7 @@ return new class extends Migration
             $table->string('descripcion')->nullable();
             $table->integer('precio')->nullable();
             $table->integer('stock')->nullable();
+            $table->integer('cant')->nullable();
             $table->timestamps();
         });
     }
