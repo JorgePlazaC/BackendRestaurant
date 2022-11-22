@@ -9,7 +9,6 @@ class Imagen extends Model
 {
     use HasFactory;
     protected $fillable = [
-        'tipo',
-        'imagen',
+        'url',
     ];
 }

@@ -16,10 +16,9 @@ return new class extends Migration
     {
         Schema::create('imagens', function (Blueprint $table) {
             $table->id();
-            $table->string('tipo');
+            $table->string('url');
             $table->timestamps();
         });
-        DB::statement("ALTER TABLE imagens ADD imagen LONGBLOB");
     }
 
     /**

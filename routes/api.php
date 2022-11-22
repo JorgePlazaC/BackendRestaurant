@@ -39,3 +39,5 @@ Route::resource('imagens',ImagenController::class);
 //Rutas personalizadas
 Route::get('/buscarPorCategoria', [ProductoController::class, 'BuscarPorIdCategoria'])->name('BuscarPorIdCategoria');
 Route::get('/buscarImagen', [ImagenController::class, 'BuscarPorIdImagen'])->name('BuscarPorIdImagen');
+
+Route::post('/upload', [ImagenController::class, 'uploadImage'])->name('images.upload');
