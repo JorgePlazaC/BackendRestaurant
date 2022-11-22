@@ -7,6 +7,8 @@ use App\Http\Controllers\MesaController;
 use App\Http\Controllers\PedidoController;
 use App\Http\Controllers\ProductoController;
 use App\Http\Controllers\CategoriaController;
+use App\Http\Controllers\ImagenController;
+
 
 /*
 |--------------------------------------------------------------------------
@@ -31,7 +33,9 @@ Route::resource('mesas',MesaController::class);
 Route::resource('pedidos',PedidoController::class);
 Route::resource('productos',ProductoController::class);
 Route::resource('categorias',CategoriaController::class);
+Route::resource('imagens',ImagenController::class);
 
 
 //Rutas personalizadas
 Route::get('/buscarPorCategoria', [ProductoController::class, 'BuscarPorIdCategoria'])->name('BuscarPorIdCategoria');
+Route::get('/buscarImagen', [ImagenController::class, 'BuscarPorIdImagen'])->name('BuscarPorIdImagen');

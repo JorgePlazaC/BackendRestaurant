@@ -3,7 +3,6 @@
 use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
-use Illuminate\Support\Facades\DB;
 
 return new class extends Migration
 {
@@ -19,6 +18,8 @@ return new class extends Migration
             $table->string('nombre');
             $table->unsignedBigInteger('idCategoria');
             $table->foreign('idCategoria')->references('id')->on('categorias')->onDelete("cascade");
+            $table->unsignedBigInteger('idImagen');
+            $table->foreign('idImagen')->references('id')->on('imagens')->onDelete("cascade");
             $table->string('descripcion')->nullable();
             $table->integer('precio')->nullable();
             $table->integer('stock')->nullable();
@@ -26,7 +27,7 @@ return new class extends Migration
             $table->timestamps();
         });
 
-        DB::statement("ALTER TABLE productos ADD imagen LONGBLOB");
+
     }
 
     /**
