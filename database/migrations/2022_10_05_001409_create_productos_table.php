@@ -20,6 +20,7 @@ return new class extends Migration
             $table->foreign('idCategoria')->references('id')->on('categorias')->onDelete("cascade");
             $table->unsignedBigInteger('idImagen');
             $table->foreign('idImagen')->references('id')->on('imagens')->onDelete("cascade");
+            $table->string('urlImagen')->nullable();
             $table->string('descripcion')->nullable();
             $table->integer('precio')->nullable();
             $table->integer('stock')->nullable();

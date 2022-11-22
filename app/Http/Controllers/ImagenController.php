@@ -113,6 +113,6 @@ class ImagenController extends Controller
         $url = URL::to('/') . '/public/images/' . $filename;
         $image['url'] = $url;
         $image->save();
-        return response()->json(['isSuccess' => true, 'url' => $url]);
+        return response()->json(['isSuccess' => true, 'url' => $url, 'data' => $image]);
     }
 }

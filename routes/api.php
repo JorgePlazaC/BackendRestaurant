@@ -41,3 +41,4 @@ Route::get('/buscarPorCategoria', [ProductoController::class, 'BuscarPorIdCatego
 Route::get('/buscarImagen', [ImagenController::class, 'BuscarPorIdImagen'])->name('BuscarPorIdImagen');
 
 Route::post('/upload', [ImagenController::class, 'uploadImage'])->name('images.upload');
+//Route::post('/upload', [ProductoController::class, 'uploadImage'])->name('images.upload');
