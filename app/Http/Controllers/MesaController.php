@@ -85,4 +85,16 @@ class MesaController extends Controller
         $mesa->delete();
         return 'Eliminado exitosamente';
     }
+
+    public function MesasActivos()
+    {
+        $Mesas = Mesa::where('estado', 1)->get();
+        return $Mesas;
+    }
+
+    public function MesasInactivos()
+    {
+        $Mesas = Mesa::where('estado', 0)->get();
+        return $Mesas;
+    }
 }

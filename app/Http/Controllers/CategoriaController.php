@@ -85,4 +85,16 @@ class CategoriaController extends Controller
         $categoria->delete();
         return 'Eliminado exitosamente';
     }
+
+    public function CategoriasActivos()
+    {
+        $Categorias = Categoria::where('estado', 1)->get();
+        return $Categorias;
+    }
+
+    public function CategoriasInactivos()
+    {
+        $Categorias = Categoria::where('estado', 0)->get();
+        return $Categorias;
+    }
 }

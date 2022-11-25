@@ -37,8 +37,20 @@ Route::resource('imagens',ImagenController::class);
 
 
 //Rutas personalizadas
+//Productos
 Route::get('/buscarPorCategoria', [ProductoController::class, 'BuscarPorIdCategoria'])->name('BuscarPorIdCategoria');
-Route::get('/buscarImagen', [ImagenController::class, 'BuscarPorIdImagen'])->name('BuscarPorIdImagen');
+Route::get('/productosActivos', [ProductoController::class, 'ProductosActivos'])->name('ProductosActivos');
+Route::get('/productosInactivos', [ProductoController::class, 'ProductosInactivos'])->name('ProductosInactivos');
 
+//Mesas
+Route::get('/mesasActivos', [MesaController::class, 'MesasActivos'])->name('MesasActivos');
+Route::get('/mesasInactivos', [MesaController::class, 'MesasInactivos'])->name('MesasInactivos');
+
+//Categorias
+Route::get('/categoriasActivos', [CategoriaController::class, 'CategoriasActivos'])->name('CategoriasActivos');
+Route::get('/categoriasInactivos', [CategoriaController::class, 'CategoriasInactivos'])->name('CategoriasInactivos');
+
+//Imagenes
+Route::get('/buscarImagen', [ImagenController::class, 'BuscarPorIdImagen'])->name('BuscarPorIdImagen');
 Route::post('/upload', [ImagenController::class, 'uploadImage'])->name('images.upload');
 //Route::post('/upload', [ProductoController::class, 'uploadImage'])->name('images.upload');

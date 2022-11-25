@@ -98,13 +98,31 @@ class ProductoController extends Controller
     public function BuscarPorIdCategoria(Request $request)
     {
         $idCategoria = $request->idCategoria;
+        $arrayProductos = [];
 
         if ($idCategoria == null) {
             return 'Categoria no ingresada';
         } else {
             $Productos = Producto::where('idCategoria', $idCategoria)->get();
-            return $Productos;
+            foreach ($Productos as $prod)
+                {
+                if($prod->estado == 1){
+                    array_push($arrayProductos, $prod);
+                }
+                }
+            return $arrayProductos;
         }
     }
 
+    public function ProductosActivos()
+    {
+        $Productos = Producto::where('estado', 1)->get();
+        return $Productos;
+    }
+
+    public function ProductosInactivos()
+    {
+        $Productos = Producto::where('estado', 0)->get();
+        return $Productos;
+    }
 }
