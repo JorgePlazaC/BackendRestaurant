@@ -16,6 +16,7 @@ return new class extends Migration
         Schema::create('mesas', function (Blueprint $table) {
             $table->id('id');
             $table->string('numMesa')->unique();
+            $table->boolean('estado');
             $table->timestamps();
         });
     }

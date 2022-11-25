@@ -16,6 +16,11 @@ class Producto extends Model
         'descripcion',
         'precio',
         'stock',
-        'cant'
+        'cant',
+        'estado'
+    ];
+
+    protected $attributes = [
+        'estado' => true,
     ];
 }

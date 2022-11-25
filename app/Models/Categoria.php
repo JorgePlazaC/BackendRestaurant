@@ -9,6 +9,11 @@ class Categoria extends Model
 {
     use HasFactory;
     protected $fillable = [
-        'nombre'
+        'nombre',
+        'estado'
+    ];
+
+    protected $attributes = [
+        'estado' => true,
     ];
 }

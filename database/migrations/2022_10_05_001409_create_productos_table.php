@@ -25,6 +25,7 @@ return new class extends Migration
             $table->integer('precio')->nullable();
             $table->integer('stock')->nullable();
             $table->integer('cant')->nullable();
+            $table->boolean('estado');
             $table->timestamps();
         });
 

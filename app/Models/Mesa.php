@@ -9,6 +9,11 @@ class Mesa extends Model
 {
     use HasFactory;
     protected $fillable = [
-        'numMesa'
+        'numMesa',
+        'estado'
+    ];
+
+    protected $attributes = [
+        'estado' => true,
     ];
 }
