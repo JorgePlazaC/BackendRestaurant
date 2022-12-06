@@ -17,12 +17,15 @@ class CategoriaSeeder extends Seeder
     {
         DB::table('categorias')->insert([
             'nombre' => 'Entradas',
+            'estado' => true,
           ]);
           DB::table('categorias')->insert([
             'nombre' => 'Almuerzos',
+            'estado' => true,
           ]);
           DB::table('categorias')->insert([
             'nombre' => 'Postres',
+            'estado' => true,
           ]);
     }
 }

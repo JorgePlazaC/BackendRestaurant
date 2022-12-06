@@ -17,14 +17,17 @@ class MesaSeeder extends Seeder
     {
         DB::table('mesas')->insert([
             'numMesa' => 1,
+            'estado' => true,
           ]);
 
           DB::table('mesas')->insert([
             'numMesa' => 2,
+            'estado' => true,
           ]);
 
           DB::table('mesas')->insert([
             'numMesa' => 3,
+            'estado' => true,
           ]);
     }
 }
